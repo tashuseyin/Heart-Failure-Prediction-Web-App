@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Website Title -->
+
+<div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease</span></h2>
+</div>
+
+<!-- Text Area -->
+<div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST">
+
+
+        <label for="Age">Age</label>
+        <input type="text" id="Age" name="Age" placeholder="Your age.."><br>
+
+
+        <label for="Sex">Sex</label>
+        <select id="Sex" name="Sex">
+            <option selected>----select option----</option>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br>
+
+
+        <label for="ChestPainType">Chest Pain Type</label>
+        <select id="ChestPainType" name="ChestPainType">
+            <option selected>----select option----</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymtomatic</option>
+        </select><br>
+
+
+        <label for="RestingBP">Resting Blood Pressure</label>
+        <input type="text" id="RestingBP" name="RestingBP" placeholder="A number in range [94-200] mmHg"><br>
+
+
+        <label for="Cholesterol">Serum Cholesterol</label>
+        <input type="text" id="Cholesterol" name="Cholesterol" placeholder="A number in range [126-564] mg/dl"><br>
+
+
+        <label for="FastingBS">Fasting Blood Sugar</label>
+        <select id="FastingBS" name="FastingBS">
+            <option selected>----select option----</option>
+            <option value="0">Less than 120 mg/dl</option>
+            <option value="1">Greater than 120 mg/dl</option>
+        </select><br>
+
+
+        <label for="RestingECG">Resting ECG Results</label>
+        <select id="RestingECG" name="RestingECG">
+            <option selected>----select option----</option>
+            <option value="0">Normal</option>
+            <option value="1">Having ST-T wave abnormality</option>
+            <option value="2">Probable or definite left ventricular hypertrophy</option>
+        </select><br>
+
+
+        <label for="MaxHR">Max Heart Rate </label>
+        <input type="text" id="MaxHR" name="MaxHR" placeholder="A number in range [71-202] bpm"><br>
+
+
+        <label for="ExerciseAngina">Exercise-induced Angina</label>
+        <select id="ExerciseAngina" name="ExerciseAngina">
+            <option selected>----select option----</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+
+        <label for="Oldpeak">ST depression</label>
+        <input type="text" id="Oldpeak" name="Oldpeak" placeholder="ST depression, typically in [0-3]"><br>
+
+
+        <label for="ST_Slope">slope of the peak exercise ST segment</label>
+        <select id="ST_Slope" name="ST_Slope">
+            <option selected>----select option----</option>
+            <option value="0">Flat</option>
+            <option value="1">Up</option>
+            <option value="2">Down</option>
+        </select><br>
+
+        <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+</div>
+
+</body>
+
+</html>
